@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { GroceryserviceService } from '../services/groceryservice.service';
 
 @Component({
@@ -8,15 +9,22 @@ import { GroceryserviceService } from '../services/groceryservice.service';
 })
 export class TableComponent implements OnInit {
   product:any[]=[]
-  total = 0;
+  grandTotal!: number;
   constructor(private groceryService:GroceryserviceService) { 
     this.product = this.groceryService.sharedProduct;
   }
   
   ngOnInit(): void {
   }
-
+  onClickSubmit(){
+    this.grandTotal = this.product.reduce(function (accumulator, item) {
+      let temptotal  = (accumulator + (item.unit * item.amount))
+      return temptotal;
+    }, 0);  
+    //console.log(this.grandTotal)
+    return this.grandTotal
+  }
+  
   Deleteme(element: any){
-    console.log( element )
   }
 }
