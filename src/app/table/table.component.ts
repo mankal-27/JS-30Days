@@ -10,6 +10,7 @@ import { GroceryserviceService } from '../services/groceryservice.service';
 export class TableComponent implements OnInit {
   product:any[]=[]
   grandTotal!: number;
+  tempTotal: any;
   constructor(private groceryService:GroceryserviceService) { 
     this.product = this.groceryService.sharedProduct;
   }
@@ -22,11 +23,34 @@ export class TableComponent implements OnInit {
       return temptotal;
     }, 0);  
    
-    return this.grandTotal.toFixed(2);
+    return this.grandTotal.toFixed(2)
   }
   
-  Editme($event: any){
-    
+  Editme(e:any){
+    console.log("i am Editable");
+    if(e.target.id=="Edit"){
+      e.target.parentNode.parentNode.childNodes[0].contentEditable = true;
+      e.target.parentNode.parentNode.childNodes[1].contentEditable = true;
+      e.target.parentNode.parentNode.childNodes[2].contentEditable = true;  
+      this.tempTotal = e.target.parentNode.parentNode.childNodes[3].textContent;
+      e.target.className="fas fa-save"
+      e.target.id="Save"    
+    }
+    else{
+      console.log(this.tempTotal);
+      e.target.parentNode.parentNode.childNodes[0].contentEditable = false;
+      e.target.parentNode.parentNode.childNodes[1].contentEditable = false;
+      e.target.parentNode.parentNode.childNodes[2].contentEditable = false;
+      
+      e.target.parentNode.parentNode.childNodes[3].textContent = 
+      e.target.parentNode.parentNode.childNodes[1].textContent *
+      e.target.parentNode.parentNode.childNodes[2].textContent ;
+      
+      this.grandTotal += e.target.parentNode.parentNode.childNodes[3].textContent - this.tempTotal;
+      console.log(this.grandTotal)
+      e.target.className="fas fa-edit"
+      e.target.id="Edit"      
+    }  
   }
 
   Deleteme(element: any){
