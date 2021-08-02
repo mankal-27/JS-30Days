@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+    background: aquamarine;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 100%;
+}

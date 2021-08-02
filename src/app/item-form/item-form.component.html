@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Grocery List</h1>
+    <form #productlist = "ngForm" (ngSubmit) = "onClickSubmit(productlist)" >
+        <input type = "text" name = "itemname" placeholder = "itemname" ngModel>
+        <input type = "number" name = "unit" placeholder = "unit" ngModel>
+        <input type = "number" name = "amount" step="0.01" placeholder = "amount" ngModel>
+        <input type = "submit" value = "Add to Cart">
+     </form>
+     <app-table></app-table>
+</div>

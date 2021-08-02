@@ -1,0 +1,8 @@
+table, td ,tr{
+    margin-top: 2%;
+    border: 2px solid black;
+    background:aqua;
+    height: auto;
+    border-collapse: collapse;
+    width: 100%;
+}

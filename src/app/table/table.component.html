@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <td>Item Name</td>
+            <td>Quantity</td>
+            <td>Amount</td>
+            <td>Total</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let prod of product">
+            
+            <td>{{prod.itemname}}</td>
+            <td>{{prod.unit}}</td>
+            <td>{{prod.amount}}</td>
+            <td>{{prod.unit * prod.amount}}</td>    
+            <td> <i class="fas fa-trash-alt" type="button" (click)="Deleteme(prod)"></i></td>
+        </tr>
+    </tbody>
+    <h3>Grand Total :</h3>
+</table>
