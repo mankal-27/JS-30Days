@@ -21,10 +21,18 @@ export class TableComponent implements OnInit {
       let temptotal  = (accumulator + (item.unit * item.amount))
       return temptotal;
     }, 0);  
-    //console.log(this.grandTotal)
-    return this.grandTotal
+   
+    return this.grandTotal.toFixed(2);
   }
   
+  Editme($event: any){
+    
+  }
+
   Deleteme(element: any){
+    console.log("Hi I am deletable")
+    this.product.splice(element,1);
+    this.grandTotal -= (element.unit * element.amount);
+    this.grandTotal.toFixed(2);
   }
 }

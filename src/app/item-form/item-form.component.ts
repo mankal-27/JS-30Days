@@ -23,10 +23,5 @@ export class ItemFormComponent implements OnInit {
   onClickSubmit(data: NgForm){
     this.groceryService.sharedProduct.push(data.value);
     console.log(this.product)
-    // this.grandTotal = this.product.reduce(function (accumulator, item) {
-    //   let temptotal  = (accumulator + (item.unit * item.amount))
-    //   return temptotal;
-    // }, 0);  
-    // console.log(this.grandTotal)
   }
 }
