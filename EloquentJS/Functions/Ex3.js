@@ -23,5 +23,27 @@ function countChar(word, wordchar){
     }   
     return counter
 }
+
+function countBsMap(word){
+    const counter = {}
+    for(let i = 0 ; i<word.length-1; i++){
+        let char = word[i];
+        if(char === "B"){
+            counter[char] = (counter[char] || 0) + 1;
+        }
+    }
+    return counter;
+}
+
+function frequencyCounter(word){
+    let freqCnt = {}
+    for(let i = 0 ; i < word.length-1; i++){
+        let character = word[i];
+        freqCnt[character] = (freqCnt[character] || 0) + 1;
+    }
+    return freqCnt;
+}
 console.log(countBs("BBS"))
 console.log(countChar("kakkerlak", "k"));
+console.log(countBsMap("BBS"));
+console.log(frequencyCounter("Manjunath"));
