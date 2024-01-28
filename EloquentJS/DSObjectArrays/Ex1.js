@@ -8,9 +8,10 @@ function range(start, end){
     return numFromStartTillEnd
 }
 
-function sum(arrayValues){
+function sum(arrayValues, step){
     let finalResult = 0
     for(let i = 0 ; i <= arrayValues.length-1 ; i++){
+
         finalResult = finalResult + arrayValues[i]
     }
     return finalResult;
@@ -32,7 +33,8 @@ function higherOrderSum(arrayValues){
 }
 
 let numList = range(1,10);
-let normalSum = sum(numList);
+let step = 2
+let normalSum = sum(numList, step);
 let middleSum = middleOrderSum(numList)
 let higherSum = higherOrderSum(numList)
 console.log("NormalSum Funtion", normalSum);
