@@ -21,3 +21,17 @@ function ternaryStatement(a,b){
 
 ifelseStatement(5,6);
 ternaryStatement(8,6);
+
+/*
+Even numbers are divisible by 2 and the remainder is zero. How do you check, if a number is even or not using JavaScript?
+*/
+
+function isDivisibleByTwo(num){
+    if(num % 2 === 0){
+        return console.log(`${num} is an Even Number`)
+    }else{
+        return console.log(`${num} is an odd number`)
+    }
+}
+
+isDivisibleByTwo(10)
