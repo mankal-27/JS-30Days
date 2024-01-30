@@ -21,3 +21,8 @@ function checkElement(arr, ele) {
 }
 
 checkElement(webTechs, "Sass");
+
+const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+const backEnd = ['Node','Express', 'MongoDB']
+var fullStack = frontEnd.concat(backEnd)
+console.log(fullStack)
