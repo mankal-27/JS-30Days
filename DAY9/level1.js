@@ -71,3 +71,6 @@ function getStringList(arr) {
   const mixedArray = ['Finland', 25, 'Denmark', true, 'Norway', 'IceLand'];
   const stringList = getStringList(mixedArray);
   console.log(stringList);
+
+  var condsd = (0.56 * 440)/6.116
+  console.log(condsd)
