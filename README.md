@@ -1,2 +1,2 @@
-# Gv3
+# JS 30 Days Challenge
 JS CHALLENGE 
